@@ -30,5 +30,8 @@ def max_guests(T, E, L):
 T = 5
 E = [7, 0, 5, 1, 3]
 L = [1, 2, 1, 3, 4]
-result = max_guests(T, E, L)
+if T <= len(E) :
+    result = max_guests(T, E, L)
+else:
+    result = "Out of hours"
 print(result)  

@@ -1,10 +1,9 @@
 # check the validity of a knight move with current position and moved position as input
 
-x = [3,3]
-y = [2,1]
+x = [3, 3]
 
-if ((x[0] - y[0]) + (x[1] - y[1])):
-    print("valid")
-    
-else:
-    print("invalid")
+print("valid moves")
+for i in range(1, 8):
+    for j in range(1, 8):
+        if (abs(x[0] - i) + abs(x[1] - j) == 3):
+            print("(", i, ",", j, ")")

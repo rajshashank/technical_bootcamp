@@ -12,6 +12,15 @@
 # [1,2,1,3,4] L[], Element of L[0] to L[N-1] 
 # Output : 8 Maximum number of guests on cruise at an instance.
 
+# test case 1 : t = 1
+#               e[0] = 7
+#               l[0] = 1
+#               current guests = 7 - 1
+#               max_guests = 6 (max guests is more than 0)
+
+# test case 2 : t = 6
+#               output = Out of party hours
+
 def max_guests(t, e, l):
     current_guests = 0
     max_guests = 0
@@ -29,5 +38,5 @@ l = [1, 2, 1, 3, 4]
 if t <= len(e) :
     result = max_guests(t, e, l)
 else:
-    result = "Out of hours"
+    result = "Out of party hours"
 print(result)  

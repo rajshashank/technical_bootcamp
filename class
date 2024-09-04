@@ -1,0 +1,77 @@
+class Customer:
+    def __init__(self, name, email, phone):
+        self.name = name
+        self.email = email
+        self.phone = phone
+
+    def get_name(self):
+        return self.name
+
+    def set_name(self, name):
+        self.name = name
+
+    def get_email(self):
+        return self.email
+
+    def set_email(self, email):
+        self.email = email
+
+    def get_phone(self):
+        return self.phone
+
+    def set_phone(self, phone):
+        self.phone = phone
+
+    def __str__(self):
+        return f"Customer(Name: {self.name}, Email: {self.email}, Phone: {self.phone})"
+
+
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def get_name(self):
+        return self.name
+
+    def set_name(self, name):
+        self.name = name
+
+    def get_price(self):
+        return self.price
+
+    def set_price(self, price):
+        self.price = price
+
+    def __str__(self):
+        return f"Product(Name: {self.name}, Price: {self.price})"
+
+
+class Order:
+    def __init__(self, customer):
+        self.customer = customer
+        self.products = []
+
+    def add_product(self, product):
+        self.products.append(product)
+
+    def get_total(self):
+        return sum(product.price for product in self.products)
+
+    def __str__(self):
+        product_list = "\n".join(str(product) for product in self.products)
+        total = self.get_total()
+        return f"Order for {self.customer}:\nProducts:\n{product_list}\nTotal: {total}"
+
+
+customer1 = Customer("John Doe", "john.doe@example.com", "123-456-7890")
+
+product1 = Product("Laptop", 1000.00)
+product2 = Product("Mouse", 50.00)
+
+
+order1 = Order(customer1)
+order1.add_product(product1)
+order1.add_product(product2)
+
+print(order1)
